@@ -2,709 +2,801 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>跨境收款平台对比 2026</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700&display=swap');
 
   :root {
-    --blue: #2563EB;
-    --blue-light: #EFF6FF;
-    --blue-mid: #DBEAFE;
-    --gray-50: #F9FAFB;
-    --gray-100: #F3F4F6;
-    --gray-200: #E5E7EB;
-    --gray-400: #9CA3AF;
-    --gray-600: #4B5563;
-    --gray-800: #1F2937;
-    --gray-900: #111827;
-    --green: #059669;
-    --red: #DC2626;
-    --amber: #D97706;
-    --radius: 12px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-md: 0 4px 16px rgba(0,0,0,0.07);
+    --bg: #F7F8FA;
+    --surface: #FFFFFF;
+    --border: #E2E5EC;
+    --border-light: #ECEEF3;
+    --text-1: #0C0F1A;
+    --text-2: #4A5163;
+    --text-3: #9BA3AF;
+    --accent: #1A47CC;
+    --accent-bg: #EEF2FF;
+    --accent-mid: #C7D4FC;
+    --green: #047857;
+    --green-bg: #ECFDF5;
+    --red: #B91C1C;
+    --red-bg: #FEF2F2;
+    --amber: #92400E;
+    --amber-bg: #FFFBEB;
+    --label-bg: #F4F6FB;
+    --highlight-col: #F0F4FF;
+    --highlight-header: #1A47CC;
+    --row-h: 36px;
+    --head-h: 40px;
+    --r: 10px;
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { height: 100%; }
 
   body {
-    font-family: 'Noto Sans SC', -apple-system, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
-    background: #F8FAFC;
-    color: var(--gray-800);
-    font-size: 14px;
-    line-height: 1.6;
+    font-family: 'Noto Sans SC', -apple-system, 'PingFang SC', sans-serif;
+    background: var(--bg);
+    color: var(--text-1);
+    font-size: 13px;
+    line-height: 1;
     -webkit-font-smoothing: antialiased;
+    min-height: 100%;
   }
 
-  /* Header */
-  .header {
-    background: #fff;
-    border-bottom: 1px solid var(--gray-200);
-    padding: 20px 16px 18px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  /* ── Layout ── */
+  .page {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 24px 32px;
   }
-  .header-tag {
-    display: inline-block;
-    background: var(--blue-light);
-    color: var(--blue);
+
+  /* ── Header ── */
+  .header {
+    padding: 28px 0 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+  .header-left {}
+  .header-kicker {
     font-size: 11px;
     font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
     margin-bottom: 6px;
-    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .header-kicker::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
   }
   .header h1 {
-    font-size: 20px;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 26px;
     font-weight: 700;
-    color: var(--gray-900);
-    line-height: 1.3;
+    color: var(--text-1);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
   }
-  .header p {
+  .header-meta {
     font-size: 12px;
-    color: var(--gray-400);
-    margin-top: 4px;
+    color: var(--text-3);
+    text-align: right;
+    line-height: 1.7;
   }
 
-  /* Nav tabs */
-  .nav-tabs {
+  /* ── Nav ── */
+  .nav {
     display: flex;
-    gap: 6px;
-    padding: 12px 16px;
-    background: #F8FAFC;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 4px;
+    width: fit-content;
   }
-  .nav-tabs::-webkit-scrollbar { display: none; }
-  .nav-tab {
-    flex-shrink: 0;
-    padding: 7px 14px;
-    border-radius: 20px;
-    font-size: 12px;
+  .nav-btn {
+    padding: 7px 18px;
+    font-size: 12.5px;
     font-weight: 500;
+    color: var(--text-2);
     cursor: pointer;
-    border: 1.5px solid var(--gray-200);
-    background: #fff;
-    color: var(--gray-600);
-    transition: all 0.2s;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    transition: background 0.15s, color 0.15s;
     white-space: nowrap;
+    letter-spacing: 0.01em;
   }
-  .nav-tab.active {
-    background: var(--blue);
-    border-color: var(--blue);
+  .nav-btn:hover:not(.active) { background: var(--bg); color: var(--text-1); }
+  .nav-btn.active {
+    background: var(--accent);
     color: #fff;
+    font-weight: 600;
   }
 
-  /* Main */
-  main { padding: 0 0 40px; }
-
-  /* Section */
+  /* ── Section ── */
   .section { display: none; }
   .section.active { display: block; }
 
-  /* Section header */
-  .section-header {
-    padding: 20px 16px 12px;
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 12px;
   }
-  .section-header h2 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--gray-900);
+  .section-head h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-1);
   }
-  .section-header p {
+  .section-head p {
     font-size: 12px;
-    color: var(--gray-400);
-    margin-top: 3px;
+    color: var(--text-3);
   }
 
-  /* Table wrapper */
-  .table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin: 0 16px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--gray-200);
-    background: #fff;
+  /* ── Table shell ── */
+  .tbl-shell {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 0 0 0px rgba(26,71,204,0);
   }
-  .table-wrap::-webkit-scrollbar { height: 4px; }
-  .table-wrap::-webkit-scrollbar-track { background: var(--gray-100); }
-  .table-wrap::-webkit-scrollbar-thumb { background: var(--gray-300, #D1D5DB); border-radius: 2px; }
 
+  /* ── Table ── */
   table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 580px;
+    table-layout: fixed;
   }
 
-  /* Table head */
+  /* Head */
   thead tr {
-    background: var(--gray-50);
-    border-bottom: 2px solid var(--gray-200);
+    border-bottom: 1.5px solid var(--border);
   }
   th {
-    padding: 12px 14px;
-    font-size: 13px;
+    height: var(--head-h);
+    padding: 0 12px;
+    font-size: 12px;
     font-weight: 600;
-    color: var(--gray-800);
+    color: var(--text-2);
     text-align: left;
+    background: var(--label-bg);
+    border-right: 1px solid var(--border-light);
+    letter-spacing: 0.01em;
+    vertical-align: middle;
     white-space: nowrap;
-    border-right: 1px solid var(--gray-200);
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   th:last-child { border-right: none; }
-  th.col-platform {
-    background: var(--blue);
-    color: #fff;
+
+  th.th-label {
+    width: 138px;
+    color: var(--text-3);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
   }
-  th.col-highlight {
-    background: var(--blue-light);
-    color: var(--blue);
+  th.th-rec {
+    background: var(--highlight-col);
+    color: var(--accent);
     position: relative;
   }
-  th.col-highlight::after {
-    content: '推荐';
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    background: var(--blue);
+  th.th-rec .rec-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    background: var(--accent);
     color: #fff;
-    font-size: 9px;
-    padding: 1px 5px;
-    border-radius: 10px;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    font-weight: 600;
+    vertical-align: middle;
+    letter-spacing: 0.02em;
   }
 
-  /* Table body */
-  tbody tr:nth-child(even) { background: var(--gray-50); }
-  tbody tr:hover { background: var(--blue-light); transition: background 0.15s; }
-  tbody tr:last-child td { border-bottom: none; }
+  /* Body */
+  tbody tr {
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.1s;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: #F9FAFB; }
 
   td {
-    padding: 11px 14px;
-    font-size: 13px;
-    color: var(--gray-600);
-    border-right: 1px solid var(--gray-200);
-    border-bottom: 1px solid var(--gray-100);
+    height: var(--row-h);
+    padding: 0 12px;
+    font-size: 12.5px;
+    color: var(--text-2);
+    border-right: 1px solid var(--border-light);
     vertical-align: middle;
-    line-height: 1.5;
+    line-height: 1.4;
+    overflow: hidden;
   }
   td:last-child { border-right: none; }
-  td:first-child {
-    font-weight: 500;
-    color: var(--gray-800);
-    font-size: 12.5px;
-    white-space: nowrap;
-    background: var(--gray-50);
-    min-width: 120px;
-    position: sticky;
-    left: 0;
-    z-index: 1;
-    border-right: 1.5px solid var(--gray-200);
-  }
-  tbody tr:nth-child(even) td:first-child { background: var(--gray-100); }
 
-  /* Best value highlight */
+  td.td-label {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--text-2);
+    background: var(--label-bg);
+    border-right: 1px solid var(--border);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.005em;
+  }
+
+  td.td-rec {
+    background: var(--highlight-col);
+  }
+  tbody tr:hover td.td-rec { background: #E8EEFE; }
+
   .best {
-    color: var(--blue) !important;
+    color: var(--accent);
     font-weight: 600;
   }
-  .best-cell {
-    background: var(--blue-light) !important;
-  }
 
-  /* Check/cross */
-  .yes { color: var(--green); font-size: 15px; }
-  .no { color: var(--red); font-size: 15px; }
+  /* Indicators */
+  .yes { color: var(--green); font-size: 13px; font-weight: 500; }
+  .no  { color: var(--red);   font-size: 13px; }
   .warn { color: var(--amber); }
 
   /* Badge */
-  .badge {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 10px;
+  .b {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 7px;
+    border-radius: 4px;
     font-size: 11px;
     font-weight: 600;
     white-space: nowrap;
+    letter-spacing: 0.01em;
   }
-  .badge-blue { background: var(--blue-mid); color: var(--blue); }
-  .badge-green { background: #D1FAE5; color: var(--green); }
-  .badge-amber { background: #FEF3C7; color: var(--amber); }
-  .badge-red { background: #FEE2E2; color: var(--red); }
-  .badge-gray { background: var(--gray-100); color: var(--gray-600); }
+  .b-blue   { background: var(--accent-bg);  color: var(--accent); }
+  .b-green  { background: var(--green-bg);   color: var(--green); }
+  .b-amber  { background: var(--amber-bg);   color: var(--amber); }
+  .b-red    { background: var(--red-bg);     color: var(--red); }
+  .b-gray   { background: var(--label-bg);   color: var(--text-3); }
 
-  /* Scroll hint */
-  .scroll-hint {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 8px 16px;
-    font-size: 11px;
-    color: var(--gray-400);
-  }
-  .scroll-hint svg { flex-shrink: 0; }
-
-  /* Summary cards */
-  .cards-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 16px;
-  }
-  .card {
-    background: #fff;
-    border: 1.5px solid var(--gray-200);
-    border-radius: var(--radius);
-    padding: 14px;
-    box-shadow: var(--shadow);
-    transition: transform 0.15s, box-shadow 0.15s;
-  }
-  .card:active { transform: scale(0.98); }
-  .card.featured {
-    border-color: var(--blue);
-    background: var(--blue-light);
-    grid-column: span 2;
-  }
-  .card-label {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--gray-400);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
-  }
-  .card.featured .card-label { color: var(--blue); }
-  .card-platform {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--gray-900);
-    margin-bottom: 4px;
-  }
-  .card.featured .card-platform { color: var(--blue); font-size: 17px; }
-  .card-desc {
-    font-size: 12px;
-    color: var(--gray-600);
-    line-height: 1.5;
-  }
-  .card-icon {
-    font-size: 22px;
-    margin-bottom: 8px;
+  /* Sub-text inside td */
+  .sub {
+    display: block;
+    font-size: 10.5px;
+    color: var(--text-3);
+    line-height: 1.3;
+    margin-top: 1px;
   }
 
-  /* Notice */
+  /* ── Notice ── */
   .notice {
-    margin: 0 16px 16px;
-    padding: 12px 14px;
-    background: #FFF7ED;
-    border: 1px solid #FED7AA;
-    border-radius: 10px;
+    margin-top: 12px;
+    padding: 11px 14px;
+    background: var(--amber-bg);
+    border: 1px solid #FDE68A;
+    border-radius: 8px;
     font-size: 12px;
-    color: #92400E;
+    color: var(--amber);
     line-height: 1.6;
   }
   .notice strong { color: #78350F; }
 
-  /* Footer */
+  /* ── Summary cards ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 16px;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(26,71,204,0.08);
+    transform: translateY(-1px);
+  }
+  .card.card-featured {
+    border-color: var(--accent-mid);
+    background: var(--accent-bg);
+    grid-column: span 3;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .card-icon {
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+  }
+  .card.card-featured .card-icon { margin-bottom: 0; margin-top: 2px; font-size: 24px; }
+  .card-tag {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 5px;
+  }
+  .card.card-featured .card-tag { color: var(--accent); }
+  .card-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-1);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .card.card-featured .card-name { font-size: 17px; color: var(--accent); }
+  .card-desc { font-size: 12px; color: var(--text-2); line-height: 1.6; }
+
+  /* ── Combo steps ── */
+  .combo {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    overflow: hidden;
+  }
+  .combo-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .combo-row:last-child { border-bottom: none; }
+  .combo-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .combo-title { font-size: 13px; font-weight: 600; color: var(--text-1); margin-bottom: 3px; }
+  .combo-sub { font-size: 11.5px; color: var(--text-3); }
+
+  /* ── Summary section titles ── */
+  .s3-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin: 20px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .s3-title:first-of-type { margin-top: 0; }
+
+  /* ── Footer ── */
   footer {
     text-align: center;
-    padding: 20px 16px 30px;
+    padding: 20px 0 8px;
     font-size: 11px;
-    color: var(--gray-400);
-    border-top: 1px solid var(--gray-200);
-    margin-top: 8px;
-    line-height: 1.8;
-  }
-
-  /* Divider */
-  .divider {
-    height: 1px;
-    background: var(--gray-200);
-    margin: 20px 16px 0;
+    color: var(--text-3);
+    border-top: 1px solid var(--border-light);
+    margin-top: 24px;
+    line-height: 2;
   }
 </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="header-tag">2026年3月更新</div>
-  <h1>跨境收款平台对比</h1>
-  <p>中国亚马逊卖家收款 & 付款工具完整指南</p>
-</header>
+<div class="page">
 
-<nav class="nav-tabs">
-  <div class="nav-tab active" onclick="showSection('s1', this)">收款平台</div>
-  <div class="nav-tab" onclick="showSection('s2', this)">付款虚拟卡</div>
-  <div class="nav-tab" onclick="showSection('s3', this)">总结推荐</div>
-</nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="header-kicker">2026年3月更新</div>
+      <h1>跨境收款平台对比</h1>
+    </div>
+    <div class="header-meta">
+      中国亚马逊卖家收款 &amp; 付款工具指南<br>
+      数据以各平台官网公示为准
+    </div>
+  </header>
 
-<main>
+  <!-- Nav -->
+  <nav class="nav">
+    <button class="nav-btn active" onclick="show('s1',this)">收款平台</button>
+    <button class="nav-btn" onclick="show('s2',this)">付款虚拟卡</button>
+    <button class="nav-btn" onclick="show('s3',this)">总结推荐</button>
+  </nav>
 
-  <!-- Section 1: 收款平台 -->
+  <!-- ── S1: 收款平台 ── -->
   <div class="section active" id="s1">
-    <div class="section-header">
+    <div class="section-head">
       <h2>收款平台对比</h2>
       <p>亚马逊结算款打入你的账户</p>
     </div>
-    <div class="scroll-hint">
-      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-      左右滑动查看完整数据
-    </div>
-    <div class="table-wrap">
+
+    <div class="tbl-shell">
       <table>
+        <colgroup>
+          <col style="width:138px">
+          <col>
+          <col><!-- WorldFirst -->
+          <col>
+          <col>
+        </colgroup>
         <thead>
           <tr>
-            <th>对比项目</th>
-            <th>Payoneer<br>派安盈</th>
-            <th class="col-highlight">万里汇<br>WorldFirst</th>
+            <th class="th-label">对比项目</th>
+            <th>Payoneer 派安盈</th>
+            <th class="th-rec">万里汇 WorldFirst <span class="rec-chip">推荐</span></th>
             <th>PingPong</th>
             <th>连连国际</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>提现费率（亚马逊）</td>
-            <td>1.2%<br><span style="font-size:11px;color:var(--gray-400)">大卖可至1%</span></td>
-            <td class="best-cell"><span class="best">0.3% 封顶</span></td>
+            <td class="td-label">提现费率（亚马逊）</td>
+            <td>1.2%<span class="sub">大卖可至 1%</span></td>
+            <td class="td-rec"><span class="best">0.3% 封顶</span></td>
             <td>1% 封顶</td>
-            <td>0.5–0.7%<br><span style="font-size:11px;color:var(--gray-400)">大卖可至0.3%</span></td>
+            <td>0.5–0.7%<span class="sub">大卖可至 0.3%</span></td>
           </tr>
           <tr>
-            <td>美元入账费</td>
-            <td>1%<br><span style="font-size:11px;color:var(--gray-400)">超$20万免</span></td>
-            <td class="best-cell"><span class="best">免费</span></td>
+            <td class="td-label">美元入账费</td>
+            <td>1%<span class="sub">超 $20万 免</span></td>
+            <td class="td-rec"><span class="best">免费</span></td>
             <td><span class="best">免费</span></td>
             <td><span class="best">免费</span></td>
           </tr>
           <tr>
-            <td>最低提现额</td>
+            <td class="td-label">最低提现额</td>
             <td>$50</td>
-            <td><span class="best">$50</span></td>
+            <td class="td-rec">$50</td>
             <td>未公示</td>
             <td>$50 起</td>
           </tr>
           <tr>
-            <td>提现到银行速度</td>
+            <td class="td-label">提现到银行速度</td>
             <td>1–2 工作日</td>
-            <td class="best-cell"><span class="best">T+1</span></td>
+            <td class="td-rec"><span class="best">T+1</span></td>
             <td>对公 1–2 工作日</td>
-            <td>快速 1 工作日</td>
+            <td>1 工作日</td>
           </tr>
           <tr>
-            <td>支付宝提现</td>
-            <td><span class="no">❌</span></td>
-            <td class="best-cell"><span class="yes">✅</span> <span class="best">最快1分钟</span></td>
-            <td><span class="no">❌</span></td>
-            <td><span class="no">❌</span></td>
+            <td class="td-label">支付宝提现</td>
+            <td><span class="no">✕</span></td>
+            <td class="td-rec"><span class="yes">✓</span> <span class="best">最快 1 分钟</span></td>
+            <td><span class="no">✕</span></td>
+            <td><span class="no">✕</span></td>
           </tr>
           <tr>
-            <td>对私人民币到账</td>
+            <td class="td-label">对私人民币到账</td>
             <td>1–2 工作日</td>
-            <td class="best-cell"><span class="best">最快 1 分钟</span></td>
+            <td class="td-rec"><span class="best">最快 1 分钟</span></td>
             <td>当日到账</td>
             <td>2 小时（即时）</td>
           </tr>
           <tr>
-            <td>每日提现限额</td>
+            <td class="td-label">每日提现限额</td>
             <td>未公示</td>
-            <td>$80,000 等值</td>
+            <td class="td-rec">$80,000 等值</td>
             <td>未公示</td>
             <td>未公示</td>
           </tr>
           <tr>
-            <td>个人开户材料</td>
+            <td class="td-label">个人开户材料</td>
             <td>身份证 + 银行卡</td>
-            <td class="best-cell"><span class="best">仅需身份证</span></td>
+            <td class="td-rec"><span class="best">仅需身份证</span></td>
             <td>身份证 + 手持照</td>
             <td>以企业为主</td>
           </tr>
           <tr>
-            <td>审核时间</td>
+            <td class="td-label">审核时间</td>
             <td>1–3 工作日</td>
-            <td class="best-cell"><span class="best">1 工作日</span></td>
+            <td class="td-rec"><span class="best">1 工作日</span></td>
             <td>1–2 工作日</td>
             <td>1–3 工作日</td>
           </tr>
           <tr>
-            <td>支持平台数</td>
-            <td class="best-cell"><span class="best">3500+</span></td>
-            <td>210+ 国家平台</td>
+            <td class="td-label">支持平台数</td>
+            <td><span class="best">3500+</span></td>
+            <td class="td-rec">210+ 国家平台</td>
             <td>100+ 平台</td>
-            <td>亚马逊/Shopee/<br>Lazada 等</td>
+            <td>亚马逊 / Shopee / Lazada</td>
           </tr>
           <tr>
-            <td>VAT 缴税支持</td>
-            <td><span class="yes">✅</span></td>
-            <td><span class="yes">✅</span></td>
-            <td><span class="yes">✅</span></td>
-            <td><span class="yes">✅</span></td>
+            <td class="td-label">VAT 缴税支持</td>
+            <td><span class="yes">✓</span></td>
+            <td class="td-rec"><span class="yes">✓</span></td>
+            <td><span class="yes">✓</span></td>
+            <td><span class="yes">✓</span></td>
           </tr>
           <tr>
-            <td>国内增值税发票</td>
-            <td><span class="no">❌</span></td>
-            <td><span class="badge badge-gray">未公示</span></td>
-            <td><span class="badge badge-gray">未公示</span></td>
-            <td><span class="badge badge-gray">未公示</span></td>
+            <td class="td-label">国内增值税发票</td>
+            <td><span class="no">✕</span></td>
+            <td class="td-rec"><span class="b b-gray">未公示</span></td>
+            <td><span class="b b-gray">未公示</span></td>
+            <td><span class="b b-gray">未公示</span></td>
           </tr>
           <tr>
-            <td>监管合规</td>
-            <td>美国 FinCEN<br>+ 多国</td>
-            <td>香港 MSO<br>+ 蚂蚁集团</td>
-            <td>美国 FinCEN<br>+ 港日</td>
-            <td>66 张全球牌照<br>（港股上市）</td>
+            <td class="td-label">监管合规</td>
+            <td>美国 FinCEN + 多国</td>
+            <td class="td-rec">香港 MSO + 蚂蚁集团</td>
+            <td>美国 FinCEN + 港日</td>
+            <td>66 张全球牌照（港股上市）</td>
           </tr>
           <tr>
-            <td>历史合规风险</td>
-            <td><span class="badge badge-green">无</span></td>
-            <td><span class="badge badge-green">无</span></td>
-            <td><span class="badge badge-green">无</span></td>
-            <td><span class="badge badge-amber">⚠️ 2018年央行罚款221万</span></td>
+            <td class="td-label">历史合规风险</td>
+            <td><span class="b b-green">无</span></td>
+            <td class="td-rec"><span class="b b-green">无</span></td>
+            <td><span class="b b-green">无</span></td>
+            <td><span class="b b-amber">⚠ 2018年央行罚款 221万</span></td>
           </tr>
           <tr>
-            <td>账户冻结触发</td>
+            <td class="td-label">账户冻结触发</td>
             <td>违规操作</td>
-            <td>超1年不提现</td>
+            <td class="td-rec">超 1 年不提现</td>
             <td>接收非贸易资金</td>
             <td>违规操作</td>
           </tr>
           <tr>
-            <td>综合推荐</td>
-            <td><span class="badge badge-blue">多平台兼容首选</span></td>
-            <td class="best-cell"><span class="badge badge-blue">费率最低 + 支付宝</span></td>
-            <td><span class="badge badge-gray">中小卖家</span></td>
-            <td><span class="badge badge-gray">多平台统一管理</span></td>
+            <td class="td-label">综合推荐</td>
+            <td><span class="b b-blue">多平台兼容首选</span></td>
+            <td class="td-rec"><span class="b b-blue">费率最低 + 支付宝</span></td>
+            <td><span class="b b-gray">中小卖家</span></td>
+            <td><span class="b b-gray">多平台统一管理</span></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="notice" style="margin-top:16px;">
-      <strong>⚠️ 重要提示：</strong>建议同时开通 <strong>万里汇（主力）+ Payoneer（备用）</strong>，避免单平台风险。费率以官网实时公示为准。
+    <div class="notice">
+      <strong>⚠ 重要提示：</strong>建议同时开通 <strong>万里汇（主力）+ Payoneer（备用）</strong>，避免单平台风险。费率以官网实时公示为准。
     </div>
   </div>
 
-  <!-- Section 2: 付款虚拟卡 -->
+  <!-- ── S2: 付款虚拟卡 ── -->
   <div class="section" id="s2">
-    <div class="section-header">
+    <div class="section-head">
       <h2>付款虚拟卡对比</h2>
       <p>用于广告费、工具订阅、平台月租</p>
     </div>
-    <div class="scroll-hint">
-      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-      左右滑动查看完整数据
-    </div>
-    <div class="table-wrap">
+
+    <div class="tbl-shell">
       <table>
+        <colgroup>
+          <col style="width:138px">
+          <col><!-- 连连 -->
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead>
           <tr>
-            <th>对比项目</th>
-            <th class="col-highlight">连连越达卡</th>
+            <th class="th-label">对比项目</th>
+            <th class="th-rec">连连越达卡 <span class="rec-chip">推荐</span></th>
             <th>VCard 维卡</th>
             <th>万里付</th>
-            <th>Airwallex<br>企业卡</th>
-            <th>PingPong<br>虚拟卡</th>
+            <th>Airwallex 企业卡</th>
+            <th>PingPong 虚拟卡</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>开卡费 / 年费</td>
-            <td class="best-cell"><span class="best">免费</span></td>
+            <td class="td-label">开卡费 / 年费</td>
+            <td class="td-rec"><span class="best">免费</span></td>
             <td><span class="warn">有（视套餐）</span></td>
             <td><span class="best">免费</span></td>
             <td><span class="best">免费</span></td>
             <td><span class="best">免费</span></td>
           </tr>
           <tr>
-            <td>充值手续费</td>
-            <td class="best-cell"><span class="best">平均 0.3%</span><br><span style="font-size:11px;color:var(--gray-400)">上限 3%</span></td>
+            <td class="td-label">充值手续费</td>
+            <td class="td-rec"><span class="best">平均 0.3%</span><span class="sub">上限 3%</span></td>
             <td>约 1%</td>
-            <td class="best-cell"><span class="best">0 费用</span></td>
-            <td>0.3%<br><span style="font-size:11px;color:var(--gray-400)">最低 0.05%</span></td>
+            <td><span class="best">0 费用</span></td>
+            <td>0.3%<span class="sub">最低 0.05%</span></td>
             <td>与收款费率一致</td>
           </tr>
           <tr>
-            <td>充值方式</td>
-            <td>人民币 /<br>店铺余额</td>
-            <td><span class="badge badge-amber">USDT / BTC / ETH</span></td>
+            <td class="td-label">充值方式</td>
+            <td class="td-rec">人民币 / 店铺余额</td>
+            <td><span class="b b-amber">USDT / BTC / ETH</span></td>
             <td>万里汇账户余额</td>
             <td>企业账户余额</td>
-            <td>PingPong<br>账户余额</td>
+            <td>PingPong 账户余额</td>
           </tr>
           <tr>
-            <td>支持币种</td>
-            <td>9 种主流币种</td>
+            <td class="td-label">支持币种</td>
+            <td class="td-rec">9 种主流币种</td>
             <td>USD / EUR / GBP</td>
-            <td><span class="best">15 种主流币种</span></td>
-            <td class="best-cell"><span class="best">20+ 币种</span></td>
+            <td>15 种主流币种</td>
+            <td><span class="best">20+ 币种</span></td>
             <td>多币种</td>
           </tr>
           <tr>
-            <td>绑定支付宝 / 微信</td>
-            <td><span class="no">❌</span></td>
-            <td><span class="yes">✅</span> （付费解锁）</td>
-            <td><span class="no">❌</span></td>
-            <td><span class="no">❌</span></td>
-            <td><span class="no">❌</span></td>
+            <td class="td-label">绑定支付宝 / 微信</td>
+            <td class="td-rec"><span class="no">✕</span></td>
+            <td><span class="yes">✓</span> 付费解锁</td>
+            <td><span class="no">✕</span></td>
+            <td><span class="no">✕</span></td>
+            <td><span class="no">✕</span></td>
           </tr>
           <tr>
-            <td>Google / Facebook 广告</td>
-            <td><span class="yes">✅</span></td>
-            <td><span class="yes">✅</span></td>
-            <td><span class="yes">✅</span></td>
-            <td class="best-cell"><span class="yes">✅</span> <span class="best">API 级对接</span></td>
-            <td><span class="yes">✅</span></td>
+            <td class="td-label">Google / Facebook 广告</td>
+            <td class="td-rec"><span class="yes">✓</span></td>
+            <td><span class="yes">✓</span></td>
+            <td><span class="yes">✓</span></td>
+            <td><span class="yes">✓</span> <span class="best">API 级对接</span></td>
+            <td><span class="yes">✓</span></td>
           </tr>
           <tr>
-            <td>AI 订阅（OpenAI 等）</td>
-            <td><span class="yes">✅</span></td>
-            <td><span class="yes">✅</span></td>
-            <td><span class="yes">✅</span></td>
-            <td><span class="yes">✅</span></td>
-            <td><span class="yes">✅</span></td>
+            <td class="td-label">AI 订阅（OpenAI 等）</td>
+            <td class="td-rec"><span class="yes">✓</span></td>
+            <td><span class="yes">✓</span></td>
+            <td><span class="yes">✓</span></td>
+            <td><span class="yes">✓</span></td>
+            <td><span class="yes">✓</span></td>
           </tr>
           <tr>
-            <td>拒付费</td>
-            <td><span class="warn">$20 / 笔</span></td>
+            <td class="td-label">拒付费</td>
+            <td class="td-rec"><span class="warn">$20 / 笔</span></td>
             <td>有</td>
             <td>未公示</td>
             <td>未公示</td>
             <td>未公示</td>
           </tr>
           <tr>
-            <td>加密货币关联</td>
-            <td><span class="no">❌</span></td>
-            <td class="best-cell" style="background:#FFF7ED !important;"><span class="badge badge-amber">✅ 核心特色</span></td>
-            <td><span class="no">❌</span></td>
-            <td><span class="no">❌</span></td>
-            <td><span class="no">❌</span></td>
+            <td class="td-label">加密货币关联</td>
+            <td class="td-rec"><span class="no">✕</span></td>
+            <td><span class="b b-amber">✓ 核心特色</span></td>
+            <td><span class="no">✕</span></td>
+            <td><span class="no">✕</span></td>
+            <td><span class="no">✕</span></td>
           </tr>
           <tr>
-            <td>合规风险</td>
-            <td><span class="badge badge-green">低</span></td>
-            <td><span class="badge badge-amber">中（USDT 国内有监管风险）</span></td>
-            <td><span class="badge badge-green">低</span></td>
-            <td><span class="badge badge-green">低</span></td>
-            <td><span class="badge badge-green">低</span></td>
+            <td class="td-label">合规风险</td>
+            <td class="td-rec"><span class="b b-green">低</span></td>
+            <td><span class="b b-amber">中（USDT 国内有监管风险）</span></td>
+            <td><span class="b b-green">低</span></td>
+            <td><span class="b b-green">低</span></td>
+            <td><span class="b b-green">低</span></td>
           </tr>
           <tr>
-            <td>适合场景</td>
-            <td class="best-cell"><span class="badge badge-blue">跨境卖家日常首选</span></td>
-            <td><span class="badge badge-amber">持有 USDT 用户</span></td>
-            <td><span class="badge badge-gray">万里汇用户</span></td>
-            <td><span class="badge badge-blue">重度广告投放</span></td>
-            <td><span class="badge badge-gray">PingPong 收款用户</span></td>
+            <td class="td-label">适合场景</td>
+            <td class="td-rec"><span class="b b-blue">跨境卖家日常首选</span></td>
+            <td><span class="b b-amber">持有 USDT 用户</span></td>
+            <td><span class="b b-gray">万里汇用户</span></td>
+            <td><span class="b b-blue">重度广告投放</span></td>
+            <td><span class="b b-gray">PingPong 收款用户</span></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="notice" style="margin-top:16px;">
-      <strong>⚠️ 注意：</strong>VCard 的 USDT 充值在中国大陆存在监管风险，纯做电商业务<strong>不建议使用</strong>。连连越达卡充值手续费上限 3% 为官方公示，日常实际约 0.3%。
+    <div class="notice">
+      <strong>⚠ 注意：</strong>VCard 的 USDT 充值在中国大陆存在监管风险，纯做电商业务<strong>不建议使用</strong>。连连越达卡充值手续费上限 3% 为官方公示，日常实际约 0.3%。
     </div>
   </div>
 
-  <!-- Section 3: 总结推荐 -->
+  <!-- ── S3: 总结推荐 ── -->
   <div class="section" id="s3">
-    <div class="section-header">
-      <h2>总结推荐</h2>
-      <p>按使用场景快速选择</p>
-    </div>
 
-    <div class="cards-grid">
-      <div class="card featured">
+    <div class="s3-title">按场景快速选择</div>
+
+    <div class="cards">
+      <div class="card card-featured">
         <div class="card-icon">🏆</div>
-        <div class="card-label">收款主力 · 首选</div>
-        <div class="card-platform">万里汇 WorldFirst</div>
-        <div class="card-desc">费率业内最低 0.3% 封顶，支持支付宝最快1分钟到账，仅需身份证开户，蚂蚁集团背书，安全可靠。</div>
+        <div>
+          <div class="card-tag">收款主力 · 首选</div>
+          <div class="card-name">万里汇 WorldFirst</div>
+          <div class="card-desc">费率业内最低 0.3% 封顶，支持支付宝最快 1 分钟到账，仅需身份证开户，蚂蚁集团背书，安全可靠。</div>
+        </div>
       </div>
 
       <div class="card">
         <div class="card-icon">🔒</div>
-        <div class="card-label">收款备用</div>
-        <div class="card-platform">Payoneer</div>
+        <div class="card-tag">收款备用</div>
+        <div class="card-name">Payoneer</div>
         <div class="card-desc">支持 3500+ 平台，平台兼容性最广，避免单点风险必备。</div>
       </div>
 
       <div class="card">
         <div class="card-icon">💳</div>
-        <div class="card-label">付款首选</div>
-        <div class="card-platform">连连越达卡</div>
+        <div class="card-tag">付款首选</div>
+        <div class="card-name">连连越达卡</div>
         <div class="card-desc">合规持牌，无年费，平均 0.3% 充值费，广告订阅全支持。</div>
       </div>
 
       <div class="card">
         <div class="card-icon">📢</div>
-        <div class="card-label">重度广告投放</div>
-        <div class="card-platform">Airwallex 企业卡</div>
+        <div class="card-tag">重度广告投放</div>
+        <div class="card-name">Airwallex 企业卡</div>
         <div class="card-desc">API 级广告平台对接，20+ 币种，适合规模化卖家。</div>
       </div>
 
       <div class="card">
         <div class="card-icon">👋</div>
-        <div class="card-label">新手入门</div>
-        <div class="card-platform">万里汇</div>
-        <div class="card-desc">开户最简单，仅需身份证，1个工作日审核，费率最低，直提支付宝。</div>
+        <div class="card-tag">新手入门</div>
+        <div class="card-name">万里汇</div>
+        <div class="card-desc">开户最简单，仅需身份证，1 个工作日审核，费率最低，直提支付宝。</div>
       </div>
 
       <div class="card">
         <div class="card-icon">🔁</div>
-        <div class="card-label">多平台卖家</div>
-        <div class="card-platform">Payoneer</div>
+        <div class="card-tag">多平台卖家</div>
+        <div class="card-name">Payoneer</div>
         <div class="card-desc">亚马逊、eBay、Walmart、Shopee 等 3500+ 平台全兼容。</div>
       </div>
     </div>
 
-    <div class="divider"></div>
+    <div class="s3-title">最优组合方案</div>
 
-    <div class="section-header" style="padding-top:16px;">
-      <h2>最优组合方案</h2>
-      <p>分散风险，最大化效率</p>
-    </div>
-
-    <div style="margin:0 16px;">
-      <div style="background:#fff;border:1.5px solid var(--gray-200);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);">
-        <div style="padding:14px;border-bottom:1px solid var(--gray-100);display:flex;align-items:flex-start;gap:12px;">
-          <div style="background:var(--blue);color:#fff;border-radius:8px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">1</div>
-          <div>
-            <div style="font-weight:600;color:var(--gray-900);margin-bottom:2px;">万里汇 + Payoneer 双平台收款</div>
-            <div style="font-size:12px;color:var(--gray-400);">一主一备，避免账户被封影响回款</div>
-          </div>
+    <div class="combo">
+      <div class="combo-row">
+        <div class="combo-num">1</div>
+        <div>
+          <div class="combo-title">万里汇 + Payoneer 双平台收款</div>
+          <div class="combo-sub">一主一备，避免账户被封影响回款</div>
         </div>
-        <div style="padding:14px;border-bottom:1px solid var(--gray-100);display:flex;align-items:flex-start;gap:12px;">
-          <div style="background:var(--blue);color:#fff;border-radius:8px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">2</div>
-          <div>
-            <div style="font-weight:600;color:var(--gray-900);margin-bottom:2px;">连连越达卡付款</div>
-            <div style="font-size:12px;color:var(--gray-400);">广告费、工具订阅、平台月租统一走越达卡</div>
-          </div>
+      </div>
+      <div class="combo-row">
+        <div class="combo-num">2</div>
+        <div>
+          <div class="combo-title">连连越达卡付款</div>
+          <div class="combo-sub">广告费、工具订阅、平台月租统一走越达卡</div>
         </div>
-        <div style="padding:14px;display:flex;align-items:flex-start;gap:12px;">
-          <div style="background:var(--blue);color:#fff;border-radius:8px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">3</div>
-          <div>
-            <div style="font-weight:600;color:var(--gray-900);margin-bottom:2px;">大额广告投放加开 Airwallex</div>
-            <div style="font-size:12px;color:var(--gray-400);">月广告预算超 $5,000 时，Airwallex 更高效</div>
-          </div>
+      </div>
+      <div class="combo-row">
+        <div class="combo-num">3</div>
+        <div>
+          <div class="combo-title">大额广告投放加开 Airwallex</div>
+          <div class="combo-sub">月广告预算超 $5,000 时，Airwallex 更高效</div>
         </div>
       </div>
     </div>
 
   </div>
 
-</main>
+  <footer>
+    数据更新于 2026 年 3 月 &nbsp;·&nbsp; 费率以各平台官网实时公示为准 &nbsp;·&nbsp; 大额卖家可联系客户经理申请专属费率
+  </footer>
 
-<footer>
-  数据更新于 2026 年 3 月<br>
-  费率以各平台官网实时公示为准<br>
-  大额卖家可联系客户经理申请专属费率
-</footer>
+</div>
 
 <script>
-  function showSection(id, tab) {
+  function show(id, btn) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
     document.getElementById(id).classList.add('active');
-    tab.classList.add('active');
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
 </body>
